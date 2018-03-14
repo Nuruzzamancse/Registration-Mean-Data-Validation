@@ -1,0 +1,30 @@
+<div *ngFor="let item of shoppingItemList" class="container-fluid">
+
+
+   
+        <div class="row">
+    
+            <div class="col"  >
+              <input type="checkbox"
+                name=""
+                [checked]="item.itemBought"
+                (click) = "updateItemCheckbox(item)"
+              >
+            </div>
+          <div class="col">{{item.name}}</div>
+          <div class="col" >{{item.roll}}</div>
+       
+    
+          <div class="col">
+            <button type="button" class="btn btn-primary" (click)="showEditForm(item)" [disabled]="toggleForm">Edit</button>
+          </div>
+    
+    
+          <div class="col" >
+              <button type="button" class="btn btn-danger" (click)="deleteItem(item._id)">Delete</button>
+            </div>
+    
+        </div>
+    
+        <br>
+      </div>
